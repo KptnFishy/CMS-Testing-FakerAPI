@@ -1,10 +1,7 @@
-class Cars {
-    private brand: string = "";
-    private model: string = "";
-    private price: number = 0;
-    private year: number = 0;
+import { Engine } from "./engine.ts";
+export class Car {
 
-    constructor(brand: string, model: string, price: number, year: number) {
+    constructor(private brand: string, private model: string, private price: number, private year: number, private engine: Engine) {
         this.setBrand(brand);
         this.setModel(model);
         this.setPrice(price);
@@ -51,13 +48,8 @@ class Cars {
         return this.year;
     }
 
+    public getEngine(): Engine {
+        return this.engine;
+    }
+
 }
-
-let car = new Cars("Toyota", "Camry", 28000, 2021);
-
-console.log(car);
-
-console.log(car.getPrice());
-console.log(car.getYear());
-console.log(car.getModel());
-console.log(car.getBrand());
