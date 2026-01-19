@@ -1,11 +1,8 @@
+import { Movement } from "../Movements/Movement";
+
 export interface Actor {
-    x: number;
-    y: number;
     width: number;
     height: number;
-
-    speedX?: number;
-    speedY?: number;
 
     color: string;
 
@@ -13,9 +10,6 @@ export interface Actor {
     render(ctx: CanvasRenderingContext2D): void;
 
     //movement stuff
-    hasInput: boolean;
-    keysPressed?: { [key: string]: boolean };
-    handleInput?(deltaTime: number): void;
-    initEventListeners?(): void;
+    movementType: Movement;
 
 }
